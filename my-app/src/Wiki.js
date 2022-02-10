@@ -1,0 +1,100 @@
+import './App.css';
+import React,{Component, createRef, useContext, createContext, useState} from 'react'
+
+function Wiki() {
+  return(
+    <React.Fragment>
+    <h1 id="firstHeading" class="firstHeading" lang="en">Module 7</h1>
+    <div id="siteSub">From CSE330 Wiki</div>
+    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+       <p>The goal of the creative project is for you to learn a new framework or language that you may be interested in. This is a good opportunity to get a head start on learning the frameworks/languages your employer/potential employer uses.</p>
+       <p>You’re free to choose which frameworks/languages you’ll use, and you’ll earn more points for learning more or harder frameworks, but <b>you’re required to learn at least one new framework/technology.</b></p>
+       <p><b>As an example</b>:</p>
+       <p>You cannot use the combination of Plain HTML/JavaScript (frontend), PHP (backend), and MySQL (Database) because we've covered those extensively in class.</p>
+       <p>You could, however, use React.JS (frontend), PHP, and MySQL, because your React front end would be new.</p>
+       <h2><span class="mw-headline" id="Creating_Your_Rubric">Creating Your Rubric</span></h2>
+       <p>Before creating a rubric, you should come up with an idea for a site you want to build. From there, check <a rel="nofollow" class="external text" href="https://classes.engineering.wustl.edu/cse330/index.php?title=Web_Frameworks">here</a> for guidance on which frameworks/languages to learn for your project and for links on how to get started with each.</p>
+       <p>As a general structure, your project will consist of:</p>
+       <ul>
+          <li>Front-end</li>
+          <li>Back-end</li>
+          <li>Database</li>
+          <li>Styling</li>
+          <li>Best practices</li>
+       </ul>
+       <p>(Though note that using all may not be necessary for your project! Reallocate as you need)</p>
+       <h4><span class="mw-headline" id="General_Rubric_Guidelines">General Rubric Guidelines</span></h4>
+       <p>Your rubric will add up to <b>100 points</b> (including the 5 points earned for submitting your rubric on time). For each component of your stack, you can allocate the following numbers of points:</p>
+       <ul>
+          <li>5 points for creating a rubric and uploading it to Github on time (yes, we will be checking your commit timestamps!). Please make sure you check your rubric out with a TA, or else it would not be considered submitted.</li>
+          <li>[10 - 40] points: Learning and implementing new framework(s).</li>
+          <li>
+             Functionality
+             <ul>
+                <li>Think about what's happening in your front end, backend, and database that creates functionality. See example rubric.</li>
+             </ul>
+          </li>
+          <li>
+             5 points: Best Practices
+             <ul>
+                <li>Code well formatted</li>
+                <li>HTML output passes the validator</li>
+             </ul>
+          </li>
+          <li>[0 - 20] points: Creative Portion</li>
+          <li>[0 - 5] points: Styling. "Looks really cool" or "Used Bootstrap" would <b>not</b> earn any points. Learning and implementing SCSS/SASS, animations, or making your page responsive/mobile-friendly would.</li>
+       </ul>
+       <p><i>Note that exceptions can be made to these guidelines, but make sure to get approval from a TA.</i></p>
+       <h5><span class="mw-headline" id="Points_you_can_allocate_for_frameworks">Points you can allocate for frameworks</span></h5>
+       <p>Because some stacks have a higher learning curve, more points will be earned for using them. Use the following as a guide:</p>
+       <ul>
+          <li>React, Vue, Angular, and other frontend frameworks&#160;: 10</li>
+          <li>Express (Node.js framework), Laravel, Bottle, Flask, other back-end micro frameworks: 10</li>
+          <li>Full stack frameworks like Django (python): 20</li>
+          <li>
+             Learning a new database system:
+             <ul>
+                <li>Mongo DB: 10</li>
+                <li>Firebase: 5 (lower learning curve)</li>
+                <li>Other SQL Databases (Postgres, MariaDB): 5</li>
+             </ul>
+          </li>
+       </ul>
+       <h2><span class="mw-headline" id="Example_Rubric">Example Rubric</span></h2>
+       <p>Say your project idea is to re-create Bitly (the URL shortener), where shortened URLs expire after 1 week, but users can purchase the shortened URL (using stripe) for it to work forever. You decide you want to use Vue for your frontend, Laravel for your backend, and a MySQL database.
+          Your rubric could look like the following:
+       </p>
+       <h6><span class="mw-headline" id="Rubric_turned_in_on_time_.285_points.29">Rubric turned in on time (5 points)</span></h6>
+       <p>Remember to get it checked out by a TA!</p>
+       <h6><span class="mw-headline" id="Languages.2FFrameworks_used_.2820_points.29">Languages/Frameworks used (20 points)</span></h6>
+       <ul>
+          <li>10 - Learned/Used Vue.js frontend</li>
+          <li>10 - Learned/Used PHP Laravel backend</li>
+          <li>0 - MySQL Database</li>
+       </ul>
+       <h6><span class="mw-headline" id="Functionality_.2860_points.29">Functionality (60 points)</span></h6>
+       <ul>
+          <li>5 Users can input a url and receive a shortened url that redirects to it.</li>
+          <li>10 Url redirect lasts 1 week before the shortened link doesn't work</li>
+          <li>10 Users can register, login, and logout</li>
+          <li>10 Logged in users can edit and delete their shortened URLs</li>
+          <li>15 Logged in users can purchase a shortened URL via Stripe integration</li>
+          <li>10 Database contains Users, Links, and Purchases with the necessary columns and column types to maintain the above functionality</li>
+       </ul>
+       <h6><span class="mw-headline" id="Best_Practices_.285_points.29">Best Practices (5 points)</span></h6>
+       <ul>
+          <li>3 Code is readable and well formatted</li>
+          <li>2 All pages pass the html validator</li>
+       </ul>
+       <h6><span class="mw-headline" id="Creative_Portion_.2810_points.29">Creative Portion (10 points)</span></h6>
+       <h2><span class="mw-headline" id="Grading">Grading</span></h2>
+       <p><b>Assignments must be committed to Github by the end of class on the due date (commit early and often). Failing to commit by the end of class on the due date will result in a 0.</b> </p>
+       <p>___________</p>
+       <p>Your project will be graded <b>in person</b> during the last week of classes, using the rubric you create.</p>
+       <p>___________</p>
+    </div>
+    </React.Fragment>
+  )
+}
+
+export default Wiki
